@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>자기소개 웹</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">My Site</div>
+    <nav class="nav">
+      <button id="goHome" class="btn small">메인</button>
+      <button id="goIntro" class="btn small">자기소개</button>
+      <button id="darkToggle" class="btn small">다크 모드</button>
+    </nav>
+  </header>
+
+  <!-- ✅ 메인 화면 -->
+  <main id="home" class="container">
+    <section class="hero">
+      <h1>반응형 기능 테스트 페이지</h1>
+      <p>이 화면은 반응형 레이아웃을 실험하는 메인 화면입니다.</p>
+      <button id="toIntro" class="btn">자기소개 보러가기</button>
+    </section>
+
+<section class="cards">
+  <article class="card">
+    <img src="image/pic1.png" alt="내 사진 1">
+    <p>첫 번째 사진</p>
+  </article>
+  <article class="card">
+    <img src="image/pic2.avif" alt="내 사진 2">
+    <p>두 번째 사진</p>
+  </article>
+  <article class="card">
+    <img src="image/pic3.jpg" alt="내 사진 3">
+    <p>세 번째 사진</p>
+  </article>
+</section>
+
+  </main>
+
+  <!-- ✅ 자기소개 화면 -->
+  <main id="intro" class="container hidden">
+    <section class="hero">
+      <h1>자기소개</h1>
+    </section>
+
+    <section class="intro-section">
+      <h2>📌 개발 / 프로젝트 경험</h2>
+      <p>문제해결프로젝트1</p>
+    </section>
+
+    <section class="intro-section">
+      <h2>📌 할 수 있는 것 (언어, 프레임워크 등)</h2>
+      <p>파이썬, C, C++, Java(조금)</p>
+    </section>
+
+    <section class="intro-section">
+      <h2>📌 이 수업 통해 하고 싶은 것</h2>
+      <p>개발자로서의 기술적인 역량을 키우고 싶다</p>
+    </section>
+
+    <section class="intro-section">
+      <h2>📌 이 수업 통해 배우고/얻고 싶은 것</h2>
+      <p>백엔드 구현 및 설계, 반응형 웹 구현</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">© 2025</footer>
+
+  <script>
+    // 화면 전환 스크립트
+    const home = document.getElementById("home");
+    const intro = document.getElementById("intro");
+    const toIntro = document.getElementById("toIntro");
+    const goHome = document.getElementById("goHome");
+    const goIntro = document.getElementById("goIntro");
+
+    function showHome(){
+      home.classList.remove("hidden");
+      intro.classList.add("hidden");
+    }
+    function showIntro(){
+      intro.classList.remove("hidden");
+      home.classList.add("hidden");
+    }
+
+    if(toIntro) toIntro.addEventListener("click", showIntro);
+    if(goHome) goHome.addEventListener("click", showHome);
+    if(goIntro) goIntro.addEventListener("click", showIntro);
+
+    // 다크 모드 토글
+    const darkBtn = document.getElementById("darkToggle");
+    darkBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      if(document.body.classList.contains("dark")){
+        darkBtn.textContent = "라이트 모드";
+      }else{
+        darkBtn.textContent = "다크 모드";
+      }
+    });
+  </script>
+</body>
+</html>

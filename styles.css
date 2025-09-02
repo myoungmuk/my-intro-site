@@ -1,0 +1,75 @@
+/* 기본 테마 변수 */
+:root {
+  --bg: #fff;
+  --text: #111;
+  --border: #eee;
+  --btn-bg: #111;
+  --btn-text: #fff;
+}
+
+/* 다크 모드 변수 */
+.dark {
+  --bg: #0b0b0b;
+  --text: #eee;
+  --border: #333;
+  --btn-bg: #eee;
+  --btn-text: #111;
+}
+
+*{ box-sizing:border-box; }
+body{ margin:0; font-family:system-ui,sans-serif; line-height:1.6;
+      background: var(--bg); color: var(--text); }
+
+.site-header,.site-footer{ padding:1rem; border-bottom:1px solid var(--border); }
+.site-footer{ border-top:1px solid var(--border); border-bottom:0; }
+.brand{ font-weight:700; }
+.nav button{ margin-left:.5rem; }
+
+.container{ max-width:1200px; margin:0 auto; padding:1rem; }
+.hero{ padding:2rem 0; }
+
+.btn{ padding:.75rem 1rem; border-radius:10px;
+      background: var(--btn-bg); color: var(--btn-text); border:1px solid var(--btn-bg); cursor:pointer; }
+.btn.small{ padding:.4rem .8rem; font-size:0.9rem; }
+
+.cards{ display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
+.card{ padding:1rem; border:1px solid var(--border); border-radius:14px; min-height:80px; }
+
+.hidden { display: none; }
+
+.intro-section { margin-bottom:2rem; }
+.intro-section h2 { margin-bottom:.5rem; border-left:4px solid var(--text); padding-left:.5rem; }
+
+/* 반응형 */
+@media (min-width:768px){
+  .site-header{ display:flex; justify-content:space-between; align-items:center; }
+  .cards{ grid-template-columns:repeat(3,1fr); }
+}
+@media (min-width:1200px){
+  .hero{ padding:3rem 0; }
+  .card{ min-height:120px; }
+}
+
+.card img{
+  width: 100%;        /* 카드 너비에 맞춤 */
+  height: auto;       /* 원본 비율 유지 */
+  border-radius: 10px;
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.card p{
+  text-align: center;
+  font-size: .9rem;
+}
+
+/* 자기소개 전용 스타일 */
+#intro h2 {
+  font-size: 1.2rem;   /* 소제목 작게 */
+  margin-bottom: 0.5rem;
+}
+
+#intro p {
+  font-size: 1.3rem;   /* 본문 크게 */
+  line-height: 1.8;    /* 줄 간격도 조금 넓히면 가독성 ↑ */
+}
